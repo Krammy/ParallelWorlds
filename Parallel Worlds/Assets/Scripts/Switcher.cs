@@ -8,9 +8,14 @@ namespace ParallelWorlds
     {
         [SerializeField] private GameEvent switchEvent = null;
 
-        private void Awake()
+        private void OnEnable()
         {
             PlayerInput.Instance.OnComplete += Switch;
+        }
+
+        private void OnDisable()
+        {
+            PlayerInput.Instance.OnComplete -= Switch;
         }
 
         private void Switch()
