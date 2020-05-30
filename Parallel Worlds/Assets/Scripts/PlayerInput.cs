@@ -6,8 +6,8 @@ namespace ParallelWorlds
 {
     public class PlayerInput : MonoBehaviour
     {
-        public delegate void CompleteEvent();
-        public event CompleteEvent OnComplete = null;
+        public delegate void SwitchEvent();
+        public event SwitchEvent OnSwitch = null;
 
         public float Horizontal { get; private set; }
         public bool Jump { get; private set; }
@@ -35,9 +35,11 @@ namespace ParallelWorlds
         {
             Horizontal = Input.GetAxis("Horizontal");
             Jump = Input.GetButtonDown("Jump");
-            Switch = Input.GetButtonDown("Switch");
 
-            OnComplete.Invoke();
+            if (Input.GetButtonDown("Switch"))
+            {
+                OnSwitch?.Invoke();
+            }
         }
 
         private void OnDestroy()

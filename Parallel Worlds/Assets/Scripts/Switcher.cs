@@ -10,18 +10,18 @@ namespace ParallelWorlds
 
         private void OnEnable()
         {
-            PlayerInput.Instance.OnComplete += Switch;
+            PlayerInput.Instance.OnSwitch += Switch;
         }
 
         private void OnDisable()
         {
             if (PlayerInput.Instance == null) return;
-            PlayerInput.Instance.OnComplete -= Switch;
+            PlayerInput.Instance.OnSwitch -= Switch;
         }
 
         private void Switch()
         {
-            if (!PlayerInput.Instance.Switch) return;
+            if (!PlayerInput.Instance) return;
             switchEvent.Raise();
         }
     }
