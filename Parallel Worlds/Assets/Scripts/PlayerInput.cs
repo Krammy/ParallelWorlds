@@ -26,6 +26,7 @@ namespace ParallelWorlds
                 {
                     var go = new GameObject("PlayerInput");
                     _instance = go.AddComponent<PlayerInput>();
+                    DontDestroyOnLoad(go);
                 }
                 return _instance;
             }
