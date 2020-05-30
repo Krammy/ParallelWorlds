@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 23089964}
   - component: {fileID: 23089965}
   m_Layer: 0
-  m_Name: PlayerInput
+  m_Name: Switcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 23089963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba7fe2b62862e464a90aa99034fd674d, type: 3}
+  m_Script: {fileID: 11500000, guid: ca5ca0458cd6a454d947504da3fcff69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   switchEvent: {fileID: 11400000, guid: bae669bfeb3e5944693123f019dfcaaf, type: 2}
@@ -371,7 +371,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.7372549, g: 0.8235294, b: 0.9098039, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1102,7 +1102,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.11764706, g: 0.24705882, b: 0.4, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites: []
