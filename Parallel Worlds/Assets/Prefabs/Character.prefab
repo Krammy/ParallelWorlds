@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4674554561680899660}
   - component: {fileID: 108897265028904573}
   - component: {fileID: 5171499423449109524}
+  - component: {fileID: 2636206909165712495}
   m_Layer: 2
   m_Name: Character
   m_TagString: Untagged
@@ -177,7 +178,30 @@ MonoBehaviour:
   scaleSpeed: 1
   onFinishAnimation:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2636206909165712495}
+        m_MethodName: SwitchScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2636206909165712495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774217884988521315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7262fdf22a0a6a34385e93eab2b8e480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414464041430220799
 GameObject:
   m_ObjectHideFlags: 0
