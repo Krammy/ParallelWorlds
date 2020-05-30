@@ -12,8 +12,11 @@ namespace ParallelWorlds
 
         private Rigidbody2D rb2d = null;
 
+        private int layer = 0;
+
         private void Awake()
         {
+            layer = LayerMask.NameToLayer("Default");
             rb2d = GetComponent<Rigidbody2D>();
         }
 
@@ -28,6 +31,8 @@ namespace ParallelWorlds
             if (PlayerInput.Instance == null) return;
             PlayerInput.Instance.OnJump -= Jump;
             PlayerInput.Instance.OnSwitch -= OnSwitch;
+            // resets ignore collision
+            Physics2D.IgnoreLayerCollision(gameObject.layer, layer, false);
         }
 
         private void FixedUpdate()
@@ -69,7 +74,6 @@ namespace ParallelWorlds
 
         private IEnumerator SwitchCoroutine()
         {
-            int layer = LayerMask.NameToLayer("Default");
             Physics2D.IgnoreLayerCollision(gameObject.layer, layer, true);
 
             SpriteRenderer spriteRend = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -87,14 +91,8 @@ namespace ParallelWorlds
                 }
                 yield return 0f;
             }
-            
-            //do
-            //{
-            //    yield return 0f;
-            //} while (Physics2D.OverlapCircle(transform.position, 0.5f) == null);
 
             Physics2D.IgnoreLayerCollision(gameObject.layer, layer, false);
-
         }
     }
 }
