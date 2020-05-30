@@ -7,15 +7,10 @@ namespace ParallelWorlds
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMove : MonoBehaviour
     {
-        [SerializeField] private LayerMask groundLayer = default;
-
         [SerializeField] private float speed = 10f;
         [SerializeField] private float jumpForce = 10f;
-        [SerializeField] private float groundTolerance = 0.1f;
 
         private Rigidbody2D rb2d = null;
-
-        private int touchingAmount = 0;
 
         private void Awake()
         {
