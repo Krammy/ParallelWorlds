@@ -11,10 +11,12 @@ namespace ParallelWorlds
         [SerializeField] private float hoverTime = 1f;
 
         private float startY = 0f;
+        private RectTransform rectTransform = null;
 
-        private void OnEnable()
+        private void Start()
         {
-            startY = transform.position.y;
+            rectTransform = GetComponent<RectTransform>();
+            startY = rectTransform.anchoredPosition.y;
         }
 
         private void Update()
@@ -22,10 +24,10 @@ namespace ParallelWorlds
             float pos1 = startY + hoverAmount;
             float pos2 = startY - hoverAmount;
 
-            Vector3 newPos = transform.position;
+            Vector3 newPos = rectTransform.anchoredPosition;
             newPos.y = Mathf.Lerp(pos1, pos2, Mathf.Sin(Mathf.PI * (Time.time / hoverTime))/2f + 0.5f);
 
-            transform.position = newPos;
+            rectTransform.anchoredPosition = newPos;
         }
     }
 }
