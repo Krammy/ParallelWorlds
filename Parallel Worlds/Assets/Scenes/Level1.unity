@@ -846,6 +846,7 @@ GameObject:
   - component: {fileID: 840799712}
   - component: {fileID: 840799714}
   - component: {fileID: 840799713}
+  - component: {fileID: 840799715}
   m_Layer: 0
   m_Name: LevelToggle2
   m_TagString: Untagged
@@ -908,6 +909,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleObject: {fileID: 530723627}
+--- !u!114 &840799715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840799711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6d10ae71d587428b6c8742b1cf514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 1be222335d8ae5347962ec2098dcc2f2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 530723627}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1088542617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,6 +1117,7 @@ GameObject:
   - component: {fileID: 1192325134}
   - component: {fileID: 1192325136}
   - component: {fileID: 1192325135}
+  - component: {fileID: 1192325137}
   m_Layer: 0
   m_Name: LevelToggle
   m_TagString: Untagged
@@ -1151,6 +1180,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleObject: {fileID: 809586579}
+--- !u!114 &1192325137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192325133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6d10ae71d587428b6c8742b1cf514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 1be222335d8ae5347962ec2098dcc2f2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 809586579}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1577247580
 PrefabInstance:
   m_ObjectHideFlags: 0
