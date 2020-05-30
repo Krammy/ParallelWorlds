@@ -15,6 +15,7 @@ namespace ParallelWorlds
 
         private void OnDisable()
         {
+            if (PlayerInput.Instance == null) return;
             PlayerInput.Instance.OnComplete -= Switch;
         }
 

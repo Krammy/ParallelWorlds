@@ -13,11 +13,15 @@ namespace ParallelWorlds
         public bool Jump { get; private set; }
         public bool Switch { get; private set; }
 
+        private static bool applicationIsQuitting = false;
+
         private static PlayerInput _instance = null;
         public static PlayerInput Instance
         {
             get
             {
+                if (applicationIsQuitting) return null;
+
                 if (_instance == null)
                 {
                     var go = new GameObject("PlayerInput");
@@ -34,6 +38,11 @@ namespace ParallelWorlds
             Switch = Input.GetButtonDown("Switch");
 
             OnComplete.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            applicationIsQuitting = true;
         }
     }
 }
