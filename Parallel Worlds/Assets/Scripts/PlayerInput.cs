@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ParallelWorlds
 {
@@ -45,7 +46,7 @@ namespace ParallelWorlds
             }
         }
 
-        private void OnDestroy()
+        private void OnApplicationQuit()
         {
             applicationIsQuitting = true;
         }
