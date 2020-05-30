@@ -7,6 +7,8 @@ namespace ParallelWorlds
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMove : MonoBehaviour
     {
+        [SerializeField] private LayerMask groundLayer = default;
+
         [SerializeField] private float speed = 10f;
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private float groundTolerance = 0.1f;
@@ -23,12 +25,21 @@ namespace ParallelWorlds
         private void OnEnable()
         {
             PlayerInput.Instance.OnJump += Jump;
+            PlayerInput.Instance.OnSwitch += OnSwitch;
         }
 
         private void OnDisable()
         {
             if (PlayerInput.Instance == null) return;
             PlayerInput.Instance.OnJump -= Jump;
+            PlayerInput.Instance.OnSwitch -= OnSwitch;
+        }
+
+        private void FixedUpdate()
+        {
+            float newSpeed = PlayerInput.Instance.Horizontal * speed * Time.fixedDeltaTime;
+            float velocityDiff = newSpeed - rb2d.velocity.x;
+            rb2d.AddForce(Vector2.right * velocityDiff, ForceMode2D.Force);
         }
 
         private void Jump()
@@ -53,25 +64,42 @@ namespace ParallelWorlds
                     return;
                 }
             }
-
-            // create raycast
-            
-
-            //Vector2 bottomLeft = myPos + new Vector2(-0.45f, -0.5f - groundTolerance);
-            //Vector2 topRight = myPos + Vector2.one * 0.45f;
-            //Vector2 size = topRight - bottomLeft;
-
-            //Collider2D hit = Physics2D.OverlapBox(transform.position, size, 0f);
-            //if (hit == null) return;
-
-            
         }
 
-        private void FixedUpdate()
+        private void OnSwitch()
         {
-            float newSpeed = PlayerInput.Instance.Horizontal * speed * Time.fixedDeltaTime;
-            float velocityDiff = newSpeed - rb2d.velocity.x;
-            rb2d.AddForce(Vector2.right * velocityDiff, ForceMode2D.Force);
+            StopAllCoroutines();
+            StartCoroutine(SwitchCoroutine());
+        }
+
+        private IEnumerator SwitchCoroutine()
+        {
+            int layer = LayerMask.NameToLayer("Default");
+            Physics2D.IgnoreLayerCollision(gameObject.layer, layer, true);
+
+            SpriteRenderer spriteRend = gameObject.GetComponentInChildren<SpriteRenderer>();
+
+            for (int i = 1; i < 2; i++)
+            {
+                yield return 0f;
+            }
+
+            while (true)
+            {
+                if (Physics2D.OverlapCircle(transform.position, 0.5f) == null)
+                {
+                    break;
+                }
+                yield return 0f;
+            }
+            
+            //do
+            //{
+            //    yield return 0f;
+            //} while (Physics2D.OverlapCircle(transform.position, 0.5f) == null);
+
+            Physics2D.IgnoreLayerCollision(gameObject.layer, layer, false);
+
         }
     }
 }
