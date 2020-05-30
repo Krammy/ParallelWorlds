@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7797482251703266978}
   - component: {fileID: 325866775750291199}
   m_Layer: 0
-  m_Name: Square
+  m_Name: BlackSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260058368942343482, guid: a108f9dfa0bab1d4aa226cfda1cf09b8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -99
       objectReference: {fileID: 0}
     - target: {fileID: 1260058368942343483, guid: a108f9dfa0bab1d4aa226cfda1cf09b8,
         type: 3}
