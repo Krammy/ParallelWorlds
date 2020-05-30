@@ -168,7 +168,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  speed: 1000
+  speed: 500
   jumpForce: 5
   groundTolerance: 0.1
 --- !u!50 &1078517599282031408

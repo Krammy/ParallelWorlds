@@ -39,7 +39,7 @@ namespace ParallelWorlds
         {
             float newSpeed = PlayerInput.Instance.Horizontal * speed * Time.fixedDeltaTime;
             float velocityDiff = newSpeed - rb2d.velocity.x;
-            rb2d.AddForce(Vector2.right * velocityDiff, ForceMode2D.Force);
+            rb2d.AddForce(Vector2.right * velocityDiff, ForceMode2D.Impulse);
         }
 
         private void Jump()
