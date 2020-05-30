@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace ParallelWorlds
 {
-    public class Hover : MonoBehaviour
+    public class HoverAnimation : MonoBehaviour
     {
         [SerializeField] private float hoverAmount = 1f;
         [SerializeField] private float hoverTime = 1f;
