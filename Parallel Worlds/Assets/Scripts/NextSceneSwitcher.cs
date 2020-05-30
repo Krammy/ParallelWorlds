@@ -7,7 +7,7 @@ namespace ParallelWorlds
     {
         public void SwitchScene()
         {
-            int nextLevel = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCount;
+            int nextLevel = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
             SceneManager.LoadScene(nextLevel);
         }
     }
