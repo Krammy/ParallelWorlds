@@ -21,6 +21,7 @@ namespace ParallelWorlds
             if (playingIndex == index) return;
 
             // fade out one audio source, fade in other
+            StopAllCoroutines();
             StartCoroutine(FadeOutAudioSource(audioSources[playingIndex]));
             playingIndex = index;
 
