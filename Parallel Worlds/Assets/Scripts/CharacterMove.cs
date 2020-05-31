@@ -58,8 +58,8 @@ namespace ParallelWorlds
             // check normals of contacts, discarding others
             foreach (ContactPoint2D contactPoint in contactPoints)
             {
-                float rot = Vector2.Angle(Vector2.zero, contactPoint.normal);
-                if (rot >= -45f && rot <= 45f)
+                float rot = Vector2.Angle(Vector2.up, contactPoint.normal);
+                if (rot >= -15f && rot <= 15f)
                 {
                     // add jump force
                     rb2d.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
