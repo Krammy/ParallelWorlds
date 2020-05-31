@@ -22,7 +22,7 @@ namespace ParallelWorlds
         {
             // get next circle position with increasingly shrinking radius
 
-            while ((Vector2)transform.position != center && transform.localScale != Vector3.zero)
+            while (transform.localScale != Vector3.zero)
             {
                 yield return 0f;
                 Vector2 myPos = transform.position;
