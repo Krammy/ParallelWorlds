@@ -852,6 +852,7 @@ GameObject:
   - component: {fileID: 891053096}
   - component: {fileID: 891053095}
   - component: {fileID: 891053094}
+  - component: {fileID: 891053098}
   - component: {fileID: 891053097}
   m_Layer: 0
   m_Name: Ambience
@@ -1093,15 +1094,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 891053092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56e3a9514c5eb54290b20f66a60353a, type: 3}
+  m_Script: {fileID: 11500000, guid: 04d6d10ae71d587428b6c8742b1cf514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onSwitch:
+  _event: {fileID: 11400000, guid: 8b1ec0cc9d7573f4bb37dd4727f5ca89, type: 2}
+  response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 891053096}
-        m_MethodName: Switch
-        m_Mode: 1
+        m_MethodName: SwitchTo
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &891053098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891053092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6d10ae71d587428b6c8742b1cf514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 68f5bea2420c6df45b15f84ae4ac6ed6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 891053096}
+        m_MethodName: SwitchTo
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

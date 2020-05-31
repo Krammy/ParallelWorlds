@@ -13,9 +13,16 @@ namespace ParallelWorlds
 
         public void Switch()
         {
+            SwitchTo((playingIndex + 1) % audioSources.Length);
+        }
+
+        public void SwitchTo(int index)
+        {
+            if (playingIndex == index) return;
+
             // fade out one audio source, fade in other
             StartCoroutine(FadeOutAudioSource(audioSources[playingIndex]));
-            playingIndex = (playingIndex + 1) % audioSources.Length;
+            playingIndex = index;
 
             audioSources[playingIndex].volume = 1f;
             audioSources[playingIndex].Play();
