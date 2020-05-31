@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ParallelWorlds
 {
@@ -9,6 +10,7 @@ namespace ParallelWorlds
     {
         [SerializeField] private float speed = 10f;
         [SerializeField] private float jumpForce = 10f;
+        [SerializeField] private UnityEvent onJump = null;
 
         private Rigidbody2D rb2d = null;
 
@@ -61,6 +63,7 @@ namespace ParallelWorlds
                 {
                     // add jump force
                     rb2d.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                    onJump.Invoke();
                     return;
                 }
             }
